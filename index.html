@@ -6,64 +6,61 @@
 <title>Kundan Patil – Android Developer</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-  /* Reset */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Arial', sans-serif; background: #f0f2f5; color: #333; scroll-behavior: smooth; }
-  a { text-decoration: none; color: inherit; }
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Arial', sans-serif; background: #f0f2f5; color: #333; scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; }
 
-  /* Header */
-  header { 
-    background: linear-gradient(135deg, #1e1e2f, #3f3f5f); 
-    color: #fff; text-align: center; padding: 100px 20px; 
-    position: relative; 
-  }
-  header h1 { font-size: 3.2em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
-  header p { font-size: 1.2em; margin-bottom: 5px; animation: fadeInUp 1s ease; }
-  header a { color: #fff; font-weight: bold; }
+/* Header */
+header { background: linear-gradient(135deg, #1e1e2f, #3f3f5f); color: #fff; text-align: center; padding: 100px 20px; position: relative; overflow: hidden; }
+header h1 { font-size: 3.2em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+header p { font-size: 1.2em; margin-bottom: 5px; animation: fadeInUp 1s ease; }
+header a { color: #fff; font-weight: bold; }
+@keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-50px);} 100% {opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(50px);} 100% {opacity:1; transform: translateY(0);} }
 
-  @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-50px);} 100% {opacity:1; transform: translateY(0);} }
-  @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(50px);} 100% {opacity:1; transform: translateY(0);} }
+/* Sections */
+section { max-width: 1100px; margin: 70px auto; padding: 0 20px; }
+h2 { font-size: 2.4em; color: #1e1e2f; border-bottom: 3px solid #1e1e2f; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
 
-  /* Sections */
-  section { max-width: 1100px; margin: 70px auto; padding: 0 20px; }
-  h2 { font-size: 2.4em; color: #1e1e2f; border-bottom: 3px solid #1e1e2f; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+/* About */
+.about-content { font-size: 1.15em; line-height: 1.7; margin-top: 15px; color: #333; text-align: justify; }
+.highlight { font-weight: bold; color: #1e1e2f; transition: color 0.3s ease; }
+.highlight:hover { color: #007bff; }
 
-  /* About */
-  .about-content { font-size: 1.15em; line-height: 1.7; margin-top: 15px; color: #333; text-align: justify; }
-  .highlight { font-weight: bold; color: #1e1e2f; transition: color 0.3s ease; }
-  .highlight:hover { color: #007bff; }
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.4s, box-shadow 0.4s; }
+.card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+.card h3 { color: #1e1e2f; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+.card p, .card ul { margin-bottom: 12px; font-size: 0.95em; line-height: 1.5; }
+.card a { display: inline-block; margin-top: 10px; color: #007bff; font-weight: bold; transition: color 0.3s; }
+.card a:hover { color: #0056b3; }
 
-  /* Cards */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-  .card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; }
-  .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
-  .card h3 { color: #1e1e2f; margin-bottom: 10px; }
-  .card p, .card ul { margin-bottom: 12px; font-size: 0.95em; line-height: 1.5; }
-  .card a { display: inline-block; margin-top: 10px; color: #007bff; font-weight: bold; transition: color 0.3s; }
-  .card a:hover { color: #0056b3; }
+/* Collapsible Projects */
+.collapsible { background-color: #eee; color: #333; cursor: pointer; padding: 10px 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 0.95em; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
+.collapsible:hover, .active { background-color: #ddd; }
+.collapsible i { transition: transform 0.3s ease; }
+.collapsible.active i { transform: rotate(180deg); }
+.content { padding: 0 15px; max-height: 0; overflow: hidden; background-color: #f9f9f9; border-radius: 0 0 8px 8px; margin-bottom: 15px; transition: max-height 0.5s ease, padding 0.5s ease; }
 
-  /* Collapsible Projects */
-  .collapsible { background-color: #eee; color: #333; cursor: pointer; padding: 10px 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 0.95em; border-radius: 8px; margin-bottom: 10px; transition: background 0.3s; }
-  .active, .collapsible:hover { background-color: #ddd; }
-  .content { padding: 10px 15px; max-height: 500px; overflow: hidden; background-color: #f9f9f9; border-radius: 0 0 8px 8px; margin-bottom: 15px; transition: max-height 0.5s ease, padding 0.5s ease; }
+/* Skills Section */
+.skill-category { margin-bottom: 25px; }
+.skill-category h3 { color: #1e1e2f; margin-bottom: 10px; }
+.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.skill { background: #1e1e2f; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 0.95em; font-weight: bold; transition: transform 0.3s, background 0.3s; }
+.skill:hover { transform: scale(1.1); background: #007bff; }
 
-  /* Skills Section */
-  .skill-category { margin-bottom: 25px; }
-  .skill-category h3 { color: #1e1e2f; margin-bottom: 10px; }
-  .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-  .skill { background: #1e1e2f; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 0.95em; font-weight: bold; transition: transform 0.3s, background 0.3s; }
-  .skill:hover { transform: scale(1.1); background: #007bff; }
+/* Education & Certificates */
+.edu-cert { margin-bottom: 20px; }
+.edu-cert h3 { color: #1e1e2f; margin-bottom: 5px; }
+.edu-cert p { margin-bottom: 5px; font-size: 0.95em; }
 
-  /* Education & Certificates */
-  .edu-cert { margin-bottom: 20px; }
-  .edu-cert h3 { color: #1e1e2f; margin-bottom: 5px; }
-  .edu-cert p { margin-bottom: 5px; font-size: 0.95em; }
+/* Footer */
+footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666; background: #e8e8e8; }
 
-  /* Footer */
-  footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666; background: #e8e8e8; }
-
-  /* Icons */
-  .icon { color: #1e1e2f; margin-right: 6px; }
+/* Icons */
+.icon { color: #1e1e2f; margin-right: 6px; }
 </style>
 </head>
 <body>
@@ -93,10 +90,11 @@
   <h2>Main Work Projects</h2>
   <div class="cards">
     <div class="card">
-      <h3>KYC Application for UAE (EIDA Toolkit)</h3>
+      <h3><i class="fas fa-id-card"></i> KYC Application for UAE (EIDA Toolkit)</h3>
       <p><strong>Apr 2025 – Jul 2025 | Full Time</strong></p>
-      <button class="collapsible">View Details</button>
+      <button class="collapsible">View Details <i class="fas fa-chevron-down"></i></button>
       <div class="content">
+        <img src="project1.png" alt="KYC App" style="width:100%; border-radius:8px; margin-bottom:10px;">
         <ul>
           <li>Integrated C-based EIDA SDK for secure identity processing.</li>
           <li>ID Document Auto-Capture (front & back) using YOLOv8 TFLite.</li>
@@ -105,11 +103,13 @@
         </ul>
       </div>
     </div>
+
     <div class="card">
-      <h3>MyTrust Application</h3>
+      <h3><i class="fas fa-shield-alt"></i> MyTrust Application</h3>
       <p><strong>Jan 2025 – Present | Full Time</strong></p>
-      <button class="collapsible">View Details</button>
+      <button class="collapsible">View Details <i class="fas fa-chevron-down"></i></button>
       <div class="content">
+        <img src="project2.png" alt="MyTrust App" style="width:100%; border-radius:8px; margin-bottom:10px;">
         <ul>
           <li>Digital onboarding app with Digital ID, e-Signatures, Vault, and customizable forms.</li>
           <li>Enhanced compliance & security measures for user data protection.</li>
@@ -117,11 +117,13 @@
         </ul>
       </div>
     </div>
+
     <div class="card">
-      <h3>UGPass App – Phase 1 to 3</h3>
+      <h3><i class="fas fa-globe"></i> UGPass App – Phase 1 to 3</h3>
       <p><strong>Aug 2021 – Present | The World Bank</strong></p>
-      <button class="collapsible">View Details</button>
+      <button class="collapsible">View Details <i class="fas fa-chevron-down"></i></button>
       <div class="content">
+        <img src="project3.png" alt="UGPass App" style="width:100%; border-radius:8px; margin-bottom:10px;">
         <ul>
           <li>Secure digital onboarding in Uganda with eKYC, PIN-based authentication, and push signing.</li>
           <li>Phase 2: In-app digital signatures, BLE-based document sharing, W3C VC compliance.</li>
@@ -132,34 +134,34 @@
   </div>
 </section>
 
-<!-- GitHub & Personal Projects -->
+<!-- Personal GitHub Projects -->
 <section>
   <h2>GitHub & Personal Projects</h2>
   <div class="cards">
     <div class="card">
-      <h3>SmartIDPassportScanner-AI</h3>
+      <h3><i class="fab fa-github"></i> SmartIDPassportScanner-AI</h3>
       <p>Automated ID/Passport capture with MRZ parsing using YOLOv8 & ML Kit.</p>
-      <a href="https://github.com/ptlkundan/SmartIDPassportScanner-AI" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <a href="https://github.com/ptlkundan/SmartIDPassportScanner-AI" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>Face-Match-And-Verify</h3>
+      <h3><i class="fab fa-github"></i> Face-Match-And-Verify</h3>
       <p>Manual ID capture with liveness detection using DTTFace SDK. Generates verified PDFs.</p>
-      <a href="https://github.com/ptlkundan/Face-Match-And-Verify" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <a href="https://github.com/ptlkundan/Face-Match-And-Verify" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>Image-Background-Removal-ML-Kit</h3>
+      <h3><i class="fab fa-github"></i> Image-Background-Removal-ML-Kit</h3>
       <p>Removes image backgrounds using ML Kit Selfie Segmentation API; integrated with Jetpack Compose.</p>
-      <a href="https://github.com/ptlkundan/Image-Background-Removal-ML-Kit-and-Jetpack" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <a href="https://github.com/ptlkundan/Image-Background-Removal-ML-Kit-and-Jetpack" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>ID Document AutoCapture (TFLite + CameraX)</h3>
+      <h3><i class="fab fa-github"></i> ID Document AutoCapture (TFLite + CameraX)</h3>
       <p>Automatic ID capture with bounding box checks, MRZ detection, and OCR validation.</p>
-      <a href="https://github.com/ptlkundan/ID-Document-AutoCapture-with-TFLite-and-CameraX" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <a href="https://github.com/ptlkundan/ID-Document-AutoCapture-with-TFLite-and-CameraX" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>Dynamic Module Feature (Memory Optimization)</h3>
+      <h3><i class="fab fa-github"></i> Dynamic Module Feature (Memory Optimization)</h3>
       <p>Split large DTTFace library (70MB+) into on-demand modules to reduce initial app size.</p>
-      <a href="https://github.com/ptlkundan/Dynamic-Module-Feature.git" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <a href="https://github.com/ptlkundan/Dynamic-Module-Feature.git" target="_blank">View Repo</a>
     </div>
   </div>
 </section>
@@ -167,7 +169,6 @@
 <!-- Skills -->
 <section>
   <h2>Skills</h2>
-
   <div class="skill-category">
     <h3>Languages</h3>
     <div class="skills">
@@ -177,7 +178,6 @@
       <span class="skill">CSS</span>
     </div>
   </div>
-
   <div class="skill-category">
     <h3>Frameworks & Architecture</h3>
     <div class="skills">
@@ -193,7 +193,6 @@
       <span class="skill">SharedFlow</span>
     </div>
   </div>
-
   <div class="skill-category">
     <h3>Tools & IDEs</h3>
     <div class="skills">
@@ -205,7 +204,6 @@
       <span class="skill">GitHub Desktop</span>
     </div>
   </div>
-
   <div class="skill-category">
     <h3>Libraries & Others</h3>
     <div class="skills">
@@ -217,7 +215,7 @@
       <span class="skill">iText</span>
       <span class="skill">Retrofit</span>
       <span class="skill">OkHttp</span>
-      <span class="skill">Json Parsing</span>
+      <span class="skill">JSON Parsing</span>
       <span class="skill">REST API</span>
       <span class="skill">DataStore</span>
       <span class="skill">Performance Optimization</span>
@@ -248,15 +246,44 @@
   &copy; 2025 Kundan Patil | Android Developer | Made with ❤️ | <a href="https://github.com/ptlkundan" target="_blank">GitHub</a>
 </footer>
 
+
 <script>
-  // Collapsible functionality
+  // Collapsible Functionality
+  // Accordion Functionality: only one open at a time
+  const coll = document.getElementsByClassName("collapsible");
+  Array.from(coll).forEach(btn => {
+    btn.addEventListener("click", function() {
+      // Close others
+      Array.from(coll).forEach(other => {
+        if(other !== btn){
+          other.classList.remove("active");
+          other.nextElementSibling.style.maxHeight = null;
+          other.nextElementSibling.style.paddingTop = "0px";
+          other.nextElementSibling.style.paddingBottom = "0px";
+        }
+      });
+      // Toggle clicked
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+        content.style.paddingTop = "0px";
+        content.style.paddingBottom = "0px";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.paddingTop = "10px";
+        content.style.paddingBottom = "10px";
+      }
+    });
+  });
+  
   const coll = document.getElementsByClassName("collapsible");
   Array.from(coll).forEach(btn => {
     btn.addEventListener("click", function() {
       this.classList.toggle("active");
       const content = this.nextElementSibling;
-      if(content.style.maxHeight && content.style.maxHeight !== "500px"){
-        content.style.maxHeight = "0px";
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
         content.style.paddingTop = "0px";
         content.style.paddingBottom = "0px";
       } else {
