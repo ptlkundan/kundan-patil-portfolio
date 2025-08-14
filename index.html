@@ -6,91 +6,139 @@
 <title>Kundan Patil – Android & AI/ML Developer</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <style>
-  body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f7f8fc; color: #333; }
-  header { background: #1e1e2f; color: #fff; text-align: center; padding: 60px 20px; }
-  header h1 { font-size: 3em; margin: 0; }
-  header p { font-size: 1.2em; margin: 5px 0; }
-  
-  section { padding: 50px 20px; max-width: 1000px; margin: auto; }
-  h2 { font-size: 2em; color: #1e1e2f; border-bottom: 3px solid #1e1e2f; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-  
-  .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-  .project { background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
-  .project:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-  .project img { width: 100%; border-radius: 10px; margin: 10px 0; }
-  .project a { display: inline-block; margin-top: 10px; color: #1e1e2f; font-weight: bold; text-decoration: none; }
-  .project a:hover { text-decoration: underline; }
+  /* Reset and Base */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #f4f6f9; }
+  a { text-decoration: none; color: inherit; }
 
-  .skills { display: flex; flex-wrap: wrap; gap: 15px; }
-  .skill { background: #1e1e2f; color: #fff; padding: 10px 15px; border-radius: 8px; font-weight: bold; font-size: 0.9em; }
+  /* Header */
+  header { background: #1e1e2f; color: #fff; text-align: center; padding: 80px 20px; }
+  header h1 { font-size: 3em; margin-bottom: 10px; }
+  header p { font-size: 1.1em; margin: 5px 0; }
 
+  /* Sections */
+  section { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+  h2 { font-size: 2.2em; color: #1e1e2f; border-bottom: 3px solid #1e1e2f; display: inline-block; padding-bottom: 10px; margin-bottom: 25px; }
+
+  /* About */
+  .about p { font-size: 1.1em; margin-top: 15px; }
+
+  /* Work Experience & Projects */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .card h3 { color: #1e1e2f; margin-bottom: 10px; }
+  .card p { margin-bottom: 10px; }
+
+  /* Skills */
+  .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+  .skill { background: #1e1e2f; color: #fff; padding: 8px 12px; border-radius: 8px; font-size: 0.9em; font-weight: bold; }
+
+  /* Education & Certificates */
+  .edu-cert { margin-bottom: 20px; }
+  .edu-cert h3 { color: #1e1e2f; margin-bottom: 5px; }
+  .edu-cert p { margin-bottom: 5px; font-size: 0.95em; }
+
+  /* Footer */
   footer { text-align: center; padding: 30px; font-size: 0.9em; color: #666; background: #f0f0f0; }
+
+  /* Icons */
+  .icon { color: #1e1e2f; margin-right: 8px; }
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
   <h1>Kundan Patil</h1>
-  <p>Android & AI/ML Mobile Developer</p>
-  <p>📧 ptlkundan@gmail.com | 📱 +91 8668344573</p>
+  <p>Android & AI/ML Developer | Hyderabad, India</p>
+  <p>📧 ptlkundan@gmail.com | 📱 +91 8668344573 | <a href="https://github.com/ptlkundan" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
 </header>
 
-<section>
+<!-- About -->
+<section class="about">
   <h2>About Me</h2>
-  <p>Innovative Android Developer with 4+ years of experience in **real-time AI/ML mobile solutions**. Skilled in **TFLite, YOLOv5/v8, ML Kit, MediaPipe, OpenCV, CameraX**, and **cross-platform mobile development**. Delivered **cost-effective, high-performance solutions** for **ID verification, face matching, MRZ parsing, and PDF generation**.</p>
+  <p>Experienced Android Developer with 4+ years of expertise in **Kotlin & Java**, specializing in scalable, high-performance, and secure mobile apps. Proficient in MVVM architecture, Jetpack components, CameraX, ML Kit, and TFLite-based AI integration. Known for delivering clean, maintainable code and collaborating with cross-functional teams.</p>
 </section>
 
+<!-- Work Experience -->
 <section>
-  <h2>Projects</h2>
-  <div class="projects">
-
-    <div class="project">
-      <h3>SmartIDPassportScanner-AI 🛂🤖</h3>
-      <img src="screenshots/smartid.png" alt="SmartIDPassportScanner-AI Screenshot">
-      <p>Automated ID/Passport capture & MRZ parsing using **TFLite YOLOv8 & ML Kit**. Stable auto-capture, front/back support, optimized for CameraX and GPU.</p>
-      <a href="https://github.com/ptlkundan/SmartIDPassportScanner-AI" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+  <h2>Work Experience</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Android Developer | DigitalTrust Technologies</h3>
+      <p><strong>Hyderabad | 04/2021 – Present</strong></p>
+      <ul>
+        <li>Improved UI/UX for My Trust app by eliminating 25% redundant screens; used Jetpack Compose and Figma for intuitive onboarding.</li>
+        <li>Reduced APK size by 40% and optimized runtime via Dynamic Feature Modules and modular architecture.</li>
+        <li>Engineered voice-enabled authentication using MVVM & SOLID principles; reduced latency by 30% for 10,000+ users.</li>
+        <li>Designed end-to-end identity verification workflow: MRZ scanning, ML Kit face cropping, liveness detection (native jnilib), face matching, and PDF generation using iText.</li>
+        <li>Created high-precision biometric SDK (ID card, palm, fingertip detection) using TFLite & CameraX; eliminated third-party SDK costs (~$10K/year), boosted accuracy by 35%.</li>
+      </ul>
     </div>
-
-    <div class="project">
-      <h3>Face-Match-And-Verify 🧑‍💻</h3>
-      <img src="screenshots/facematch.png" alt="Face-Match-And-Verify Screenshot">
-      <p>Secure ID/Passport verification with **liveness detection**, face cropping, matching, and PDF generation using iText. Auto-captures only when live face matches document face.</p>
-      <a href="https://github.com/ptlkundan/Face-Match-And-Verify" target="_blank"><i class="fab fa-github"></i> View Repo</a>
-    </div>
-
-    <div class="project">
-      <h3>ID Document AutoCapture 📝</h3>
-      <img src="screenshots/idcapture.png" alt="ID Document AutoCapture Screenshot">
-      <p>Automatic ID capture with **YOLOv8 TFLite** & CameraX, bounding box stability checks, and auto-capture. Planned enhancements for **MRZ and face/text validation**.</p>
-      <a href="https://github.com/ptlkundan/ID-Document-AutoCapture-with-TFLite-and-CameraX.git" target="_blank"><i class="fab fa-github"></i> View Repo</a>
-    </div>
-
-    <div class="project">
-      <h3>Image Background Removal 🎨</h3>
-      <img src="screenshots/backgroundremove.png" alt="Image Background Removal Screenshot">
-      <p>Removes image backgrounds using **ML Kit Selfie Segmentation** & Jetpack Compose. Improves **face detection accuracy** in KYC workflows.</p>
-      <a href="https://github.com/ptlkundan/Image-Background-Removal-ML-Kit-and-Jetpack.git" target="_blank"><i class="fab fa-github"></i> View Repo</a>
-    </div>
-
   </div>
 </section>
 
+<!-- Projects -->
+<section>
+  <h2>Professional Projects</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>UGPass Application</h3>
+      <p>World Bank-funded Android app for secure digital onboarding in Uganda. Implemented e-KYC and secure authentication, onboarding new users weekly, achieving 100+ installs.</p>
+      <a href="#" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+    </div>
+    <div class="card">
+      <h3>MyTrust Application</h3>
+      <p>Secure digital ID platform with e-Signatures, Vault storage, and dynamic forms. Modular Android app structure using MVVM, Jetpack, and dynamic feature delivery; improved onboarding by 30% and reduced fraud by 30%.</p>
+      <a href="#" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
 <section>
   <h2>Skills</h2>
   <div class="skills">
     <span class="skill">Kotlin</span>
-    <span class="skill">CameraX</span>
-    <span class="skill">TFLite YOLOv5/v8</span>
-    <span class="skill">ML Kit</span>
-    <span class="skill">MediaPipe</span>
-    <span class="skill">OpenCV</span>
-    <span class="skill">DTTFace SDK</span>
+    <span class="skill">Java</span>
+    <span class="skill">Android SDK</span>
     <span class="skill">Jetpack Compose</span>
-    <span class="skill">iText PDF</span>
+    <span class="skill">MVVM</span>
+    <span class="skill">Hilt</span>
+    <span class="skill">Room</span>
+    <span class="skill">CameraX</span>
+    <span class="skill">ML Kit</span>
+    <span class="skill">OpenCV</span>
+    <span class="skill">MediaPipe</span>
     <span class="skill">React Native</span>
+    <span class="skill">TFLite</span>
+    <span class="skill">iText PDF</span>
   </div>
 </section>
 
+<!-- Education & Certificates -->
+<section>
+  <h2>Education & Certificates</h2>
+  <div class="edu-cert">
+    <h3>Bachelor of Engineering</h3>
+    <p>Marathwada Mitra Mandal College of Engineering, Pune | 07/2016 - 05/2019 | CGPA: 6.51/10</p>
+    <h3>PG Diploma in Advanced Computing (CDAC)</h3>
+    <p>02/2020 – 02/2021</p>
+  </div>
+</section>
+
+<!-- Languages -->
+<section>
+  <h2>Languages</h2>
+  <div class="skills">
+    <span class="skill">English – Professional Working Proficiency</span>
+    <span class="skill">Hindi – Native</span>
+    <span class="skill">Marathi – Native</span>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   &copy; 2025 Kundan Patil | Android & AI/ML Developer | GitHub: <a href="https://github.com/ptlkundan" target="_blank">ptlkundan</a>
 </footer>
