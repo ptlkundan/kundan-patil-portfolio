@@ -134,6 +134,37 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
   </div>
 </section>
 
+<script>
+  // Accordion Functionality: only one open at a time
+  const coll = document.getElementsByClassName("collapsible");
+  Array.from(coll).forEach(btn => {
+    btn.addEventListener("click", function() {
+      // Close others
+      Array.from(coll).forEach(other => {
+        if(other !== btn){
+          other.classList.remove("active");
+          other.nextElementSibling.style.maxHeight = null;
+          other.nextElementSibling.style.paddingTop = "0px";
+          other.nextElementSibling.style.paddingBottom = "0px";
+        }
+      });
+      // Toggle clicked
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+        content.style.paddingTop = "0px";
+        content.style.paddingBottom = "0px";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.paddingTop = "10px";
+        content.style.paddingBottom = "10px";
+      }
+    });
+  });
+</script>
+
+
 <!-- Personal GitHub Projects -->
 <section>
   <h2>GitHub & Personal Projects</h2>
@@ -246,37 +277,8 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
   &copy; 2025 Kundan Patil | Android Developer | Made with ❤️ | <a href="https://github.com/ptlkundan" target="_blank">GitHub</a>
 </footer>
 
-
 <script>
   // Collapsible Functionality
-  // Accordion Functionality: only one open at a time
-  const coll = document.getElementsByClassName("collapsible");
-  Array.from(coll).forEach(btn => {
-    btn.addEventListener("click", function() {
-      // Close others
-      Array.from(coll).forEach(other => {
-        if(other !== btn){
-          other.classList.remove("active");
-          other.nextElementSibling.style.maxHeight = null;
-          other.nextElementSibling.style.paddingTop = "0px";
-          other.nextElementSibling.style.paddingBottom = "0px";
-        }
-      });
-      // Toggle clicked
-      this.classList.toggle("active");
-      const content = this.nextElementSibling;
-      if(content.style.maxHeight){
-        content.style.maxHeight = null;
-        content.style.paddingTop = "0px";
-        content.style.paddingBottom = "0px";
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.style.paddingTop = "10px";
-        content.style.paddingBottom = "10px";
-      }
-    });
-  });
-  
   const coll = document.getElementsByClassName("collapsible");
   Array.from(coll).forEach(btn => {
     btn.addEventListener("click", function() {
