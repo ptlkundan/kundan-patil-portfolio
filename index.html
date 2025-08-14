@@ -53,7 +53,7 @@ h2 { font-size: 2.4em; color: #1e1e2f; border-bottom: 3px solid #1e1e2f; display
 
 /* Education & Certificates */
 .edu-cert { margin-bottom: 20px; }
-.edu-cert h3 { color: #1e1e2f; margin-bottom: 5px; }
+.edu-cert h3 { color: #1e1e2f; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
 .edu-cert p { margin-bottom: 5px; font-size: 0.95em; }
 
 /* Footer */
@@ -69,8 +69,10 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
 <header>
   <h1>Kundan Patil</h1>
   <p>Android & AI/ML Developer | Hyderabad, India</p>
-  <p>📧 ptlkundan@gmail.com | 📱 +91 8668344573 | 
-     <a href="https://github.com/ptlkundan" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  <p>
+    <i class="fas fa-envelope icon"></i> ptlkundan@gmail.com | 
+    <i class="fas fa-phone icon"></i> +91 8668344573 | 
+    <a href="https://github.com/ptlkundan" target="_blank"><i class="fab fa-github icon"></i> GitHub</a>
   </p>
 </header>
 
@@ -134,38 +136,7 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
   </div>
 </section>
 
-<script>
-  // Accordion Functionality: only one open at a time
-  const coll = document.getElementsByClassName("collapsible");
-  Array.from(coll).forEach(btn => {
-    btn.addEventListener("click", function() {
-      // Close others
-      Array.from(coll).forEach(other => {
-        if(other !== btn){
-          other.classList.remove("active");
-          other.nextElementSibling.style.maxHeight = null;
-          other.nextElementSibling.style.paddingTop = "0px";
-          other.nextElementSibling.style.paddingBottom = "0px";
-        }
-      });
-      // Toggle clicked
-      this.classList.toggle("active");
-      const content = this.nextElementSibling;
-      if(content.style.maxHeight){
-        content.style.maxHeight = null;
-        content.style.paddingTop = "0px";
-        content.style.paddingBottom = "0px";
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.style.paddingTop = "10px";
-        content.style.paddingBottom = "10px";
-      }
-    });
-  });
-</script>
-
-
-<!-- Personal GitHub Projects -->
+<!-- GitHub & Personal Projects -->
 <section>
   <h2>GitHub & Personal Projects</h2>
   <div class="cards">
@@ -201,7 +172,7 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
 <section>
   <h2>Skills</h2>
   <div class="skill-category">
-    <h3>Languages</h3>
+    <h3><i class="fas fa-code icon"></i> Languages</h3>
     <div class="skills">
       <span class="skill">Kotlin</span>
       <span class="skill">Java</span>
@@ -210,7 +181,7 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
     </div>
   </div>
   <div class="skill-category">
-    <h3>Frameworks & Architecture</h3>
+    <h3><i class="fas fa-layer-group icon"></i> Frameworks & Architecture</h3>
     <div class="skills">
       <span class="skill">Jetpack Compose</span>
       <span class="skill">MVVM</span>
@@ -225,7 +196,7 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
     </div>
   </div>
   <div class="skill-category">
-    <h3>Tools & IDEs</h3>
+    <h3><i class="fas fa-tools icon"></i> Tools & IDEs</h3>
     <div class="skills">
       <span class="skill">Android Studio</span>
       <span class="skill">VS Code</span>
@@ -236,7 +207,7 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
     </div>
   </div>
   <div class="skill-category">
-    <h3>Libraries & Others</h3>
+    <h3><i class="fas fa-cubes icon"></i> Libraries & Others</h3>
     <div class="skills">
       <span class="skill">CameraX</span>
       <span class="skill">ML Kit</span>
@@ -263,11 +234,11 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
 <section>
   <h2>Education & Certificates</h2>
   <div class="edu-cert">
-    <h3>Bachelor of Engineering</h3>
+    <h3><i class="fas fa-graduation-cap icon"></i> Bachelor of Engineering</h3>
     <p>Marathwada Mitra Mandal College of Engineering, Pune | 2016 - 2019 | CGPA: 6.51/10</p>
   </div>
   <div class="edu-cert">
-    <h3>PG Diploma in Advanced Computing</h3>
+    <h3><i class="fas fa-graduation-cap icon"></i> PG Diploma in Advanced Computing</h3>
     <p>CDAC | 2020 - 2021</p>
   </div>
 </section>
@@ -278,10 +249,19 @@ footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666;
 </footer>
 
 <script>
-  // Collapsible Functionality
+  // Accordion Functionality: Only one open at a time
   const coll = document.getElementsByClassName("collapsible");
   Array.from(coll).forEach(btn => {
     btn.addEventListener("click", function() {
+      Array.from(coll).forEach(other => {
+        if(other !== btn){
+          other.classList.remove("active");
+          const c = other.nextElementSibling;
+          c.style.maxHeight = null;
+          c.style.paddingTop = "0px";
+          c.style.paddingBottom = "0px";
+        }
+      });
       this.classList.toggle("active");
       const content = this.nextElementSibling;
       if(content.style.maxHeight){
