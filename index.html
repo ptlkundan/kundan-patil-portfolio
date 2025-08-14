@@ -12,7 +12,11 @@
   a { text-decoration: none; color: inherit; }
 
   /* Header */
-  header { background: linear-gradient(135deg, #1e1e2f, #3f3f5f); color: #fff; text-align: center; padding: 100px 20px; position: relative; overflow: hidden; }
+  header { 
+    background: linear-gradient(135deg, #1e1e2f, #3f3f5f); 
+    color: #fff; text-align: center; padding: 100px 20px; 
+    position: relative; 
+  }
   header h1 { font-size: 3.2em; margin-bottom: 10px; animation: fadeInDown 1s ease; }
   header p { font-size: 1.2em; margin-bottom: 5px; animation: fadeInUp 1s ease; }
   header a { color: #fff; font-weight: bold; }
@@ -41,7 +45,7 @@
   /* Collapsible Projects */
   .collapsible { background-color: #eee; color: #333; cursor: pointer; padding: 10px 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 0.95em; border-radius: 8px; margin-bottom: 10px; transition: background 0.3s; }
   .active, .collapsible:hover { background-color: #ddd; }
-  .content { padding: 0 15px; max-height: 0; overflow: hidden; background-color: #f9f9f9; border-radius: 0 0 8px 8px; margin-bottom: 15px; transition: max-height 0.5s ease, padding 0.5s ease; }
+  .content { padding: 10px 15px; max-height: 500px; overflow: hidden; background-color: #f9f9f9; border-radius: 0 0 8px 8px; margin-bottom: 15px; transition: max-height 0.5s ease, padding 0.5s ease; }
 
   /* Skills Section */
   .skill-category { margin-bottom: 25px; }
@@ -128,7 +132,7 @@
   </div>
 </section>
 
-<!-- Personal GitHub Projects -->
+<!-- GitHub & Personal Projects -->
 <section>
   <h2>GitHub & Personal Projects</h2>
   <div class="cards">
@@ -245,14 +249,14 @@
 </footer>
 
 <script>
-  // Smooth Collapsible Animation
+  // Collapsible functionality
   const coll = document.getElementsByClassName("collapsible");
   Array.from(coll).forEach(btn => {
     btn.addEventListener("click", function() {
       this.classList.toggle("active");
       const content = this.nextElementSibling;
-      if(content.style.maxHeight){
-        content.style.maxHeight = null;
+      if(content.style.maxHeight && content.style.maxHeight !== "500px"){
+        content.style.maxHeight = "0px";
         content.style.paddingTop = "0px";
         content.style.paddingBottom = "0px";
       } else {
