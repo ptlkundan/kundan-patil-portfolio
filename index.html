@@ -20,7 +20,6 @@
   /* Animations */
   @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-50px);} 100% {opacity:1; transform: translateY(0);} }
   @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(50px);} 100% {opacity:1; transform: translateY(0);} }
-  @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
   /* Sections */
   section { max-width: 1100px; margin: 70px auto; padding: 0 20px; }
@@ -31,12 +30,17 @@
 
   /* Cards */
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-  .card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.4s, box-shadow 0.4s; }
+  .card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.4s, box-shadow 0.4s; cursor: pointer; }
   .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
   .card h3 { color: #1e1e2f; margin-bottom: 10px; }
-  .card p { margin-bottom: 12px; font-size: 0.95em; line-height: 1.5; }
+  .card p, .card ul { margin-bottom: 12px; font-size: 0.95em; line-height: 1.5; }
   .card a { display: inline-block; margin-top: 10px; color: #1e1e2f; font-weight: bold; transition: color 0.3s; }
   .card a:hover { color: #007bff; }
+
+  /* Collapsible content for long descriptions */
+  .collapsible { background-color: #eee; color: #333; cursor: pointer; padding: 10px 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 0.95em; border-radius: 8px; margin-bottom: 10px; }
+  .active, .collapsible:hover { background-color: #ddd; }
+  .content { padding: 0 15px; display: none; overflow: hidden; background-color: #f9f9f9; border-radius: 0 0 8px 8px; margin-bottom: 15px; }
 
   /* Skills */
   .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
@@ -51,8 +55,9 @@
   /* Footer */
   footer { text-align: center; padding: 35px 20px; font-size: 0.95em; color: #666; background: #e8e8e8; }
 
-  /* Buttons/Icons */
+  /* Icons */
   .icon { color: #1e1e2f; margin-right: 6px; }
+
 </style>
 </head>
 <body>
@@ -69,55 +74,83 @@
 <!-- About -->
 <section class="about">
   <h2>About Me</h2>
-  <p>Experienced Android Developer with 4+ years in **Kotlin & Java**, specializing in scalable, high-performance, and secure mobile apps. Expertise in MVVM architecture, Jetpack, CameraX, ML Kit, MediaPipe, TFLite integration, and AI-driven mobile features. Known for clean code, performance optimization, and delivering production-grade apps.</p>
+  <p>Experienced Android Developer with 4+ years in <strong>Kotlin & Java</strong>, specializing in scalable, high-performance, and secure mobile apps. Expertise in MVVM architecture, Jetpack, CameraX, ML Kit, MediaPipe, TFLite integration, and AI-driven mobile features.</p>
 </section>
 
-<!-- Work Experience -->
+<!-- Main Work Projects -->
 <section>
-  <h2>Work Experience</h2>
+  <h2>Main Work Projects</h2>
   <div class="cards">
     <div class="card">
-      <h3>Android Developer | DigitalTrust Technologies</h3>
-      <p><strong>Hyderabad | 04/2021 – Present</strong></p>
-      <ul>
-        <li>Redesigned MyTrust app UI/UX, eliminating 25% redundant screens; implemented Jetpack Compose with Figma collaboration.</li>
-        <li>Reduced APK size by 40%, optimized runtime via modular architecture and NDK components.</li>
-        <li>Voice-enabled authentication (MVVM + SOLID) reduced latency by 30% across 10k+ users.</li>
-        <li>End-to-end ID verification: MRZ scanning, ML Kit face cropping, liveness detection (native jnilib), face matching, PDF generation using iText.</li>
-        <li>Created biometric SDK (ID card, palm, fingertip) using TFLite & CameraX; eliminated $10K/year third-party costs, increased detection accuracy by 35%.</li>
-      </ul>
+      <h3>KYC Application for UAE (EIDA Toolkit)</h3>
+      <p><strong>Apr 2025 – Jul 2025 | Full Time</strong></p>
+      <button class="collapsible">View Details</button>
+      <div class="content">
+        <ul>
+          <li>Integrated C-based EIDA SDK for secure identity processing.</li>
+          <li>ID Document Auto-Capture (front & back) using YOLOv8 TFLite.</li>
+          <li>Face verification & offline/online data retrieval optimized.</li>
+          <li>Led junior developers & collaborated with C/Java teams for seamless integration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>MyTrust Application</h3>
+      <p><strong>Jan 2025 – Present | Full Time</strong></p>
+      <button class="collapsible">View Details</button>
+      <div class="content">
+        <ul>
+          <li>Digital onboarding app with Digital ID, e-Signatures, Vault, and customizable forms.</li>
+          <li>Enhanced compliance & security measures for user data protection.</li>
+          <li>Cross-functional collaboration for app functionality & UI/UX design.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>UGPass App – Phase 1 to 3</h3>
+      <p><strong>Aug 2021 – Present | The World Bank</strong></p>
+      <button class="collapsible">View Details</button>
+      <div class="content">
+        <ul>
+          <li>Secure digital onboarding in Uganda with eKYC, PIN-based authentication, and push signing.</li>
+          <li>Phase 2: In-app digital signatures, BLE-based document sharing, W3C VC compliance.</li>
+          <li>Phase 3: Dynamic digital vault, secure form submission, real-time document provisioning.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
+<!-- Personal GitHub Projects -->
 <section>
-  <h2>Professional Projects</h2>
+  <h2>Personal GitHub Achievements & R&D</h2>
   <div class="cards">
     <div class="card">
       <h3>SmartIDPassportScanner-AI</h3>
-      <p>Automated ID/Passport capture with MRZ parsing using YOLOv8 & ML Kit. Removed paid MRZ libraries, optimized auto-capture, and integrated Python-based AI processing. Tested on Redmi, OnePlus, Pixel devices (Android 10–15).</p>
-      <a href="https://github.com/ptlkundan/SmartIDPassportScanner-AI" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <p>Automated ID/Passport capture with MRZ parsing using YOLOv8 & ML Kit.</p>
+      <a href="https://github.com/ptlkundan/SmartIDPassportScanner-AI" target="_blank">View Repo</a>
     </div>
     <div class="card">
       <h3>Face-Match-And-Verify</h3>
-      <p>Manual ID/Passport capture with liveness detection using DTTFace SDK. Auto-capture only on verified live face alignment. Generates verified user PDF with front/back photos using iText, and ML Kit face matching.</p>
-      <a href="https://github.com/ptlkundan/Face-Match-And-Verify" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <p>Manual ID capture with liveness detection using DTTFace SDK. Generates verified PDFs.</p>
+      <a href="https://github.com/ptlkundan/Face-Match-And-Verify" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>Image-Background-Removal-ML-Kit-and-Jetpack</h3>
-      <p>Android feature to remove image backgrounds using ML Kit Selfie Segmentation API. Integrated with Jetpack Compose for responsive UI. Improves face detection accuracy in KYC apps by isolating face from cluttered backgrounds.</p>
-      <a href="https://github.com/ptlkundan/Image-Background-Removal-ML-Kit-and-Jetpack" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <h3>Image-Background-Removal-ML-Kit</h3>
+      <p>Removes image backgrounds using ML Kit Selfie Segmentation API; integrated with Jetpack Compose.</p>
+      <a href="https://github.com/ptlkundan/Image-Background-Removal-ML-Kit-and-Jetpack" target="_blank">View Repo</a>
     </div>
     <div class="card">
-      <h3>ID Document AutoCapture With TFLite and CameraX</h3>
-      <p>Automatic ID document capture using YOLOv8 TFLite & CameraX, with bounding box stability checks, auto-capture, MRZ line detection, and OCR-based validation. Optimized for accuracy and speed.</p>
-      <a href="https://github.com/ptlkundan/ID-Document-AutoCapture-with-TFLite-and-CameraX" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+      <h3>ID Document AutoCapture (TFLite + CameraX)</h3>
+      <p>Automatic ID capture with bounding box checks, MRZ detection, and OCR validation.</p>
+      <a href="https://github.com/ptlkundan/ID-Document-AutoCapture-with-TFLite-and-CameraX" target="_blank">View Repo</a>
     </div>
-	<div class="card">
-      <h3>Dynamic Module Feature (Memory Optimization Technique)</h3>
-      <p>Implemented Dynamic Feature Modules to optimize memory by splitting the large DTTFace library (70MB+) into on-demand modules. Reduces initial app size. Size reduction visible in Google Play Console; debug builds may not reflect it.</p>
-      <a href="https://github.com/ptlkundan/Dynamic-Module-Feature.git" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+    <div class="card">
+      <h3>Dynamic Module Feature (Memory Optimization)</h3>
+      <p>Split large DTTFace library (70MB+) into on-demand modules to reduce initial app size.</p>
+      <a href="https://github.com/ptlkundan/Dynamic-Module-Feature.git" target="_blank">View Repo</a>
     </div>
   </div>
 </section>
@@ -167,6 +200,9 @@
     <span class="skill">React Native (Basic)</span>
     <span class="skill">Spring Boot (Basic)</span>
     <span class="skill">Memory Management</span>
+    <span class="skill">Html</span>
+    <span class="skill">CSS</span>
+    <span class="skill">BootStrap</span>
     <span class="skill">App Security (ProGuard/R8)</span>
   </div>
 </section>
@@ -188,6 +224,22 @@
 <footer>
   &copy; 2025 Kundan Patil | Android Developer | Made with ❤️ | <a href="https://github.com/ptlkundan" target="_blank">GitHub</a>
 </footer>
+
+<script>
+  // Collapsible for long descriptions
+  const coll = document.getElementsByClassName("collapsible");
+  for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
