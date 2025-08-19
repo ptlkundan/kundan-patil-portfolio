@@ -151,6 +151,41 @@
       .hero{ padding-top:80px; }
       .pill{ font-size:.85rem; padding:.4rem .6rem; }
     }
+	
+	/* 🔹 Common button style */
+/* Common button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+/* Light mode */
+.light .btn {
+  background-color: #2563eb; /* blue */
+  color: #fff;
+}
+
+.light .btn:hover {
+  background-color: #1d4ed8; /* darker blue */
+}
+
+/* Dark mode */
+.dark .btn {
+  background-color: #3b82f6; /* blue */
+  color: #fff;
+}
+
+.dark .btn:hover {
+  background-color: #60a5fa; /* lighter blue */
+}
+
+
   </style>
 </head>
 <body>
@@ -184,6 +219,7 @@
         <button id="themeBtn" class="theme-toggle" aria-label="Toggle theme"><i id="themeIcon" class="fa-solid fa-moon"></i><span class="d-none d-md-inline"> Theme</span></button>
       </div>
     </div>
+	
   </nav>
 
   <!-- HERO -->
@@ -195,7 +231,7 @@
           <h1>Ship fast. Scale safely. <span style="color:var(--accent)">Delight users.</span></h1>
           <p class="lead muted">4+ years building high-performance Android apps with CameraX, ML Kit, TensorFlow Lite, secure eKYC flows, and real-time auto-capture.</p>
           <div class="d-flex gap-3 flex-wrap mt-3">
-            <a class="btn btn-light btn-lg" href="#contact">Get in touch</a>
+				<a class="btn btn-lg" href="#contact">Get in touch</a>
             <a class="btn btn-outline-light btn-lg" href="#projects">See projects</a>
             <a class="btn btn-primary-custom btn-lg" href="https://github.com/ptlkundan" target="_blank"><i class="fa-brands fa-github me-2"></i>GitHub</a>
           </div>
