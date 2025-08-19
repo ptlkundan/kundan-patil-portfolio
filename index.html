@@ -152,34 +152,93 @@
       .pill{ font-size:.85rem; padding:.4rem .6rem; }
     }
 	
-/* ---------- BUTTONS (Unified for See Project + Get in Touch) ---------- */
 /* ---------- BUTTONS (Unified styling) ---------- */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  border: none;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-}
-.btn:hover {
-  filter: brightness(0.9);
+/* ---------- BUTTONS: unified overrides (place AFTER Bootstrap and your other CSS) ---------- */
+
+/* Base override for anchors/buttons using Bootstrap btn class */
+a.btn, button.btn, input.btn[type="button"], input.btn[type="submit"] {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border: none !important;
+  padding: 12px 22px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+  box-shadow: none !important;
 }
 
-/* Outline variant */
-.btn-outline-light {
-  background: transparent;
-  border: 2px solid var(--btn-bg);
-  color: var(--btn-bg);
+/* Slightly larger for .btn-lg */
+a.btn.btn-lg, button.btn.btn-lg {
+  padding: 14px 26px !important;
+  font-size: 1.03rem !important;
 }
-.btn-outline-light:hover {
-  background: var(--btn-bg);
-  color: var(--btn-text);
+
+/* Hover / active */
+a.btn:hover, button.btn:hover {
+  filter: brightness(.92);
+  transform: translateY(-2px);
 }
+
+/* Outline variant (named btn-outline-light in your HTML). Override Bootstrap's outline rules */
+a.btn.btn-outline-light, button.btn.btn-outline-light {
+  background: transparent !important;
+  border: 2px solid var(--btn-bg) !important;
+  color: var(--btn-bg) !important;
+  padding: 10px 20px !important;
+}
+a.btn.btn-outline-light:hover, button.btn.btn-outline-light:hover {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  transform: translateY(-2px);
+}
+
+/* btn-primary-custom used on GitHub links: make it match primary */
+.btn-primary-custom {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border: 0 !important;
+  padding: .45rem .7rem !important;
+  border-radius: 8px !important;
+  font-weight:700 !important;
+}
+
+/* Outline custom used in project cards */
+.btn-outline-custom {
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  padding: .4rem .65rem !important;
+  border-radius: 8px !important;
+}
+.btn-outline-custom:hover {
+  background: var(--accent-weak) !important;
+  color: var(--text) !important;
+}
+
+/* Disabled */
+.btn-disabled {
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+/* Small accessibility/focus */
+a.btn:focus, button.btn:focus {
+  outline: none !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+}
+
+/* Optional: keep layout stable on small screens */
+@media (max-width: 576px) {
+  a.btn, button.btn { padding: 10px 16px !important; }
+  a.btn.btn-lg, button.btn.btn-lg { padding: 12px 18px !important; }
+}
+
 
 
 
@@ -229,8 +288,9 @@
           <h1>Ship fast. Scale safely. <span style="color:var(--accent)">Delight users.</span></h1>
           <p class="lead muted">4+ years building high-performance Android apps with CameraX, ML Kit, TensorFlow Lite, secure eKYC flows, and real-time auto-capture.</p>
           <div class="d-flex gap-3 flex-wrap mt-3">
-				<a class="btn btn-lg" href="#contact">Get in touch</a>
-            <a class="btn btn-outline-light btn-lg" href="#projects">See projects</a>
+			<a class="btn btn-lg btn-primary" href="#contact">Get in touch</a>
+<a class="btn btn-lg btn-outline-primary" href="#projects">See projects</a>
+
             <a class="btn btn-primary-custom btn-lg" href="https://github.com/ptlkundan" target="_blank"><i class="fa-brands fa-github me-2"></i>GitHub</a>
           </div>
         </div>
