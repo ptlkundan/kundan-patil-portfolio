@@ -152,8 +152,8 @@
       .pill{ font-size:.85rem; padding:.4rem .6rem; }
     }
 	
-	/* 🔹 Common button style */
-/* Common button */
+/* ---------- BUTTONS (Unified for See Project + Get in Touch) ---------- */
+/* ---------- BUTTONS (Unified styling) ---------- */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -163,27 +163,25 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   border: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+.btn:hover {
+  filter: brightness(0.9);
 }
 
-/* Light mode */
-.light .btn {
-  background-color: #2563eb; /* blue */
-  color: #fff;
+/* Outline variant */
+.btn-outline-light {
+  background: transparent;
+  border: 2px solid var(--btn-bg);
+  color: var(--btn-bg);
+}
+.btn-outline-light:hover {
+  background: var(--btn-bg);
+  color: var(--btn-text);
 }
 
-.light .btn:hover {
-  background-color: #1d4ed8; /* darker blue */
-}
 
-/* Dark mode */
-.dark .btn {
-  background-color: #3b82f6; /* blue */
-  color: #fff;
-}
-
-.dark .btn:hover {
-  background-color: #60a5fa; /* lighter blue */
-}
 
 
   </style>
